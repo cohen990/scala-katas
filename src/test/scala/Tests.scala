@@ -90,6 +90,13 @@ class UnitTests extends munit.FunSuite {
     
     assertEquals(sendCommand(input), Left(error))
   }
+
+  test("should error if the y position is not numeric") {
+    val input = "5 5\nD 2 N\nM"
+    val error = CommandError("invalid position")
+    
+    assertEquals(sendCommand(input), Left(error))
+  }
   
   test("should move north from 2 3 N") {
     val input = "5 5\n2 3 N\nM"

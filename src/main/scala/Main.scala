@@ -12,17 +12,31 @@ enum RoverDirection:
   case East
   case West
 
+object RoverDirection:
+  def fromString(value: Char): RoverDirection =
+    value match
+      case 'N' => RoverDirection.North
+      case 'E' => RoverDirection.East
+      case 'S' => RoverDirection.South
+      case 'W' => RoverDirection.West
+
 case class RoverPosition(x: Integer, y: Integer, direction: RoverDirection)
 
-case class Commands(commandString: String)
+enum RoverCommand:
+  case Move
+  case Left
+  case Right
+
+object RoverCommand:
+  def fromChar(value: Char): RoverCommand =
+    value match
+      case 'M' => RoverCommand.Move
+      case 'R' => RoverCommand.Right
+      case 'L' => RoverCommand.Left
 
 // solves https://github.com/makomweb/mars-rover
 object RoverController {
-
   //def inputParser(inputString: String): Either[CommandError, (RoverPosition, Commands)] =
-
-
-
   def sendCommand(rawInput: String): Either[CommandError, String] = 
     if(rawInput.length == 0){
       Left(CommandError("no input detected"))
@@ -32,21 +46,17 @@ object RoverController {
         case input if input.length == 1 => Left(CommandError("missing rover details"))
         case input if input.length == 2 => Left(CommandError("no commands detected"))
         case Array(gridSize, roverPositionRaw, commands) => 
-          val roverDirection = roverPositionRaw(4) match
-            case 'N' => RoverDirection.North
-            case 'E' => RoverDirection.East
-            case 'S' => RoverDirection.South
-            case 'W' => RoverDirection.West
+          val roverDirection = RoverDirection.fromString(roverPositionRaw(4))
           roverPositionRaw(0).isDigit && roverPositionRaw(2).isDigit match
           case true => val roverPosition = RoverPosition(roverPositionRaw(0).asDigit, roverPositionRaw(2).asDigit, roverDirection)
-            commands(0) match
-            case 'M' => roverPosition.direction match
+            RoverCommand.fromChar(commands(0)) match
+            case RoverCommand.Move => roverPosition.direction match
               case RoverDirection.North => moveRoverNorth(roverPosition)
               case RoverDirection.South => Right("1 1 S")
               case RoverDirection.East => Right("2 2 E")
               case RoverDirection.West => Right("0 2 W")
-            case 'R' => turnRoverRight(roverPosition)
-            case 'L' => roverPosition.direction match
+            case RoverCommand.Right => turnRoverRight(roverPosition)
+            case RoverCommand.Left => roverPosition.direction match
               case RoverDirection.North => Right("2 3 W")
               case RoverDirection.East => Right("2 3 N")
               case RoverDirection.South => Right("2 3 E")
@@ -69,5 +79,4 @@ object RoverController {
         Right(s"$currentPositionX $currentPositionY W")
       case RoverDirection.West =>
         Right(s"$currentPositionX $currentPositionY N")
-
 }
