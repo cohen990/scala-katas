@@ -1,20 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuite hostname="arch" name="UnitTests" tests="19" errors="0" failures="4" skipped="0" time="0.042" timestamp="2023-05-19T16:56:20">
+<testsuite hostname="OVO-JPTYKN3" name="UnitTests" tests="23" errors="0" failures="0" skipped="0" time="0.01" timestamp="2023-05-26T16:31:05">
           <properties>
-      <property name="jline.esc.timeout" value="0"/><property name="jna.platform.library.path" value="/usr/lib64:/lib64:/usr/lib:/lib:/usr/lib32:/usr/lib/opencollada:/opt/intel/oneapi/tbb/latest/lib/intel64/gcc4.8:/opt/intel/oneapi/compiler/latest/linux/lib:/opt/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin:/usr/lib/libfakeroot"/><property name="java.runtime.name" value="OpenJDK Runtime Environment"/><property name="sun.boot.library.path" value="/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/amd64"/><property name="java.vm.version" value="25.352-b08"/><property name="java.vm.vendor" value="Temurin"/><property name="java.vendor.url" value="https://adoptium.net/"/><property name="path.separator" value=":"/><property name="jna.loaded" value="true"/><property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/><property name="file.encoding.pkg" value="sun.io"/><property name="user.country" value="GB"/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="sun.os.patch.level" value="unknown"/><property name="jna.nosys" value="true"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="user.dir" value="/home/git/scala-katas"/><property name="java.runtime.version" value="1.8.0_352-b08"/><property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/><property name="java.endorsed.dirs" value="/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/endorsed"/><property name="os.arch" value="amd64"/><property name="java.io.tmpdir" value="/tmp"/><property name="line.separator" value="
-"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="log4j.ignoreTCL" value="true"/><property name="os.name" value="Linux"/><property name="sun.jnu.encoding" value="UTF-8"/><property name="jnidispatch.path" value="/home/work/.cache/JNA/temp/jna6577157586888987201.tmp"/><property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.class.version" value="52.0"/><property name="sbt.ipcsocket.tmpdir" value="/run/user/1001/.sbted03ae20/ipcsocket"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="os.version" value="6.2.13-arch1-1"/><property name="swoval.tmpdir" value="/run/user/1001/.sbted03ae20/swoval"/><property name="user.home" value="/home/work"/><property name="user.timezone" value="Europe/London"/><property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/><property name="file.encoding" value="UTF-8"/><property name="java.specification.version" value="1.8"/><property name="java.class.path" value="/home/work/.sdkman/candidates/sbt/1.8.0/bin/sbt-launch.jar"/><property name="user.name" value="work"/><property name="jline.shutdownhook" value="false"/><property name="java.vm.specification.version" value="1.8"/><property name="sun.java.command" value="/home/work/.sdkman/candidates/sbt/1.8.0/bin/sbt-launch.jar"/><property name="java.home" value="/home/work/.sdkman/candidates/java/8.0.352-tem/jre"/><property name="sun.arch.data.model" value="64"/><property name="user.language" value="en"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="awt.toolkit" value="sun.awt.X11.XToolkit"/><property name="java.vm.info" value="mixed mode"/><property name="java.version" value="1.8.0_352"/><property name="java.ext.dirs" value="/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/ext:/usr/java/packages/lib/ext"/><property name="sun.boot.class.path" value="/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/resources.jar:/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/rt.jar:/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/sunrsasign.jar:/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/jsse.jar:/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/jce.jar:/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/charsets.jar:/home/work/.sdkman/candidates/java/8.0.352-tem/jre/lib/jfr.jar:/home/work/.sdkman/candidates/java/8.0.352-tem/jre/classes"/><property name="java.vendor" value="Temurin"/><property name="java.specification.maintenance.version" value="4"/><property name="file.separator" value="/"/><property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.cpu.endian" value="little"/><property name="sbt.script" value="/home/work/.sdkman/candidates/sbt/current/bin/sbt"/><property name="sun.cpu.isalist" value=""/>
+      <property name="jline.esc.timeout" value="0"/><property name="jna.platform.library.path" value="/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/usr/lib64:/lib64:/usr/lib:/lib:/lib/i386-linux-gnu:/usr/lib/x86_64-linux-gnu/libfakeroot"/><property name="java.runtime.name" value="OpenJDK Runtime Environment"/><property name="sun.boot.library.path" value="/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/amd64"/><property name="java.vm.version" value="25.352-b08"/><property name="java.vm.vendor" value="Temurin"/><property name="java.vendor.url" value="https://adoptium.net/"/><property name="path.separator" value=":"/><property name="jna.loaded" value="true"/><property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/><property name="file.encoding.pkg" value="sun.io"/><property name="user.country" value="GB"/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="sun.os.patch.level" value="unknown"/><property name="jna.nosys" value="true"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="user.dir" value="/home/sammiecohen/git/scala-katas"/><property name="java.runtime.version" value="1.8.0_352-b08"/><property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/><property name="java.endorsed.dirs" value="/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/endorsed"/><property name="os.arch" value="amd64"/><property name="java.io.tmpdir" value="/tmp"/><property name="line.separator" value="
+"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="log4j.ignoreTCL" value="true"/><property name="os.name" value="Linux"/><property name="sun.jnu.encoding" value="UTF-8"/><property name="jnidispatch.path" value="/home/sammiecohen/.cache/JNA/temp/jna2850391751605191997.tmp"/><property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.class.version" value="52.0"/><property name="sbt.ipcsocket.tmpdir" value="/run/user/1000/.sbtea8041a6/ipcsocket"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="os.version" value="5.19.0-41-generic"/><property name="swoval.tmpdir" value="/run/user/1000/.sbtea8041a6/swoval"/><property name="user.home" value="/home/sammiecohen"/><property name="user.timezone" value="Europe/London"/><property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/><property name="file.encoding" value="UTF-8"/><property name="java.specification.version" value="1.8"/><property name="java.class.path" value="/home/sammiecohen/.sdkman/candidates/sbt/1.8.0/bin/sbt-launch.jar"/><property name="user.name" value="sammiecohen"/><property name="jline.shutdownhook" value="false"/><property name="java.vm.specification.version" value="1.8"/><property name="sun.java.command" value="/home/sammiecohen/.sdkman/candidates/sbt/1.8.0/bin/sbt-launch.jar"/><property name="java.home" value="/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre"/><property name="sun.arch.data.model" value="64"/><property name="user.language" value="en"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="awt.toolkit" value="sun.awt.X11.XToolkit"/><property name="java.vm.info" value="mixed mode"/><property name="java.version" value="1.8.0_352"/><property name="java.ext.dirs" value="/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/ext:/usr/java/packages/lib/ext"/><property name="sun.boot.class.path" value="/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/resources.jar:/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/rt.jar:/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/sunrsasign.jar:/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/jsse.jar:/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/jce.jar:/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/charsets.jar:/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/lib/jfr.jar:/home/sammiecohen/.sdkman/candidates/java/8.0.352-tem/jre/classes"/><property name="java.vendor" value="Temurin"/><property name="java.specification.maintenance.version" value="4"/><property name="file.separator" value="/"/><property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.cpu.endian" value="little"/><property name="sbt.script" value="/home/sammiecohen/.sdkman/candidates/sbt/current/bin/sbt"/><property name="sun.desktop" value="gnome"/><property name="sun.cpu.isalist" value=""/>
     </properties>
-          <testcase classname="UnitTests" name="should fail when there is no input" time="0.009">
+          <testcase classname="UnitTests" name="should fail when there is no input" time="0.005">
                       
                     </testcase><testcase classname="UnitTests" name="should fail when only a grid size is given" time="0.001">
                       
                     </testcase><testcase classname="UnitTests" name="should fail when no commands are included" time="0.0">
                       
-                    </testcase><testcase classname="UnitTests" name="should fail when no commands are included for a large plateau" time="0.001">
+                    </testcase><testcase classname="UnitTests" name="should fail when no commands are included for a large plateau" time="0.0">
                       
-                    </testcase><testcase classname="UnitTests" name="should move north 1 2 N" time="0.0">
+                    </testcase><testcase classname="UnitTests" name="should move north 1 2 N" time="0.001">
                       
-                    </testcase><testcase classname="UnitTests" name="should move south" time="0.001">
+                    </testcase><testcase classname="UnitTests" name="should move south" time="0.0">
                       
                     </testcase><testcase classname="UnitTests" name="should move east" time="0.0">
                       
@@ -28,136 +28,28 @@
                       
                     </testcase><testcase classname="UnitTests" name="should turn right from north" time="0.0">
                       
-                    </testcase><testcase classname="UnitTests" name="should turn right from east" time="0.001">
+                    </testcase><testcase classname="UnitTests" name="should turn right from east" time="0.0">
                       
                     </testcase><testcase classname="UnitTests" name="should turn right from south" time="0.0">
                       
-                    </testcase><testcase classname="UnitTests" name="should turn right from west" time="0.0">
+                    </testcase><testcase classname="UnitTests" name="should turn right from west" time="0.001">
                       
-                    </testcase><testcase classname="UnitTests" name="should turn left from north" time="0.025">
-                      <failure message="/home/git/scala-katas/src/test/scala/Tests.scala:131
-130:
-[7m131:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-132:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 E&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 E&quot;[0m
-[92m+  value = &quot;2 3 W&quot;[0m
- )" type="munit.ComparisonFailException">munit.ComparisonFailException: /home/git/scala-katas/src/test/scala/Tests.scala:131
-130:
-[7m131:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-132:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 E&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 E&quot;[0m
-[92m+  value = &quot;2 3 W&quot;[0m
- )
-	at munit.FunSuite.assertEquals(FunSuite.scala:11)
-	at UnitTests.$init$$$anonfun$17(Tests.scala:131)
-</failure>
-                    </testcase><testcase classname="UnitTests" name="should turn left from east" time="0.001">
-                      <failure message="/home/git/scala-katas/src/test/scala/Tests.scala:138
-137:
-[7m138:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-139:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 S&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 S&quot;[0m
-[92m+  value = &quot;2 3 N&quot;[0m
- )" type="munit.ComparisonFailException">munit.ComparisonFailException: /home/git/scala-katas/src/test/scala/Tests.scala:138
-137:
-[7m138:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-139:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 S&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 S&quot;[0m
-[92m+  value = &quot;2 3 N&quot;[0m
- )
-	at munit.FunSuite.assertEquals(FunSuite.scala:11)
-	at UnitTests.$init$$$anonfun$18(Tests.scala:138)
-</failure>
+                    </testcase><testcase classname="UnitTests" name="should turn right from north when at a different starting position" time="0.0">
+                      
+                    </testcase><testcase classname="UnitTests" name="should turn right from east when at a different starting position" time="0.0">
+                      
+                    </testcase><testcase classname="UnitTests" name="should turn right from south when at a different starting position" time="0.0">
+                      
+                    </testcase><testcase classname="UnitTests" name="should turn right from west when at a different starting position" time="0.0">
+                      
+                    </testcase><testcase classname="UnitTests" name="should turn left from north" time="0.0">
+                      
+                    </testcase><testcase classname="UnitTests" name="should turn left from east" time="0.0">
+                      
                     </testcase><testcase classname="UnitTests" name="should turn left from south" time="0.001">
-                      <failure message="/home/git/scala-katas/src/test/scala/Tests.scala:145
-144:
-[7m145:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-146:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 W&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 W&quot;[0m
-[92m+  value = &quot;2 3 E&quot;[0m
- )" type="munit.ComparisonFailException">munit.ComparisonFailException: /home/git/scala-katas/src/test/scala/Tests.scala:145
-144:
-[7m145:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-146:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 W&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 W&quot;[0m
-[92m+  value = &quot;2 3 E&quot;[0m
- )
-	at munit.FunSuite.assertEquals(FunSuite.scala:11)
-	at UnitTests.$init$$$anonfun$19(Tests.scala:145)
-</failure>
-                    </testcase><testcase classname="UnitTests" name="should turn left from west" time="0.001">
-                      <failure message="/home/git/scala-katas/src/test/scala/Tests.scala:152
-151:
-[7m152:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-153:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 N&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 N&quot;[0m
-[92m+  value = &quot;2 3 S&quot;[0m
- )" type="munit.ComparisonFailException">munit.ComparisonFailException: /home/git/scala-katas/src/test/scala/Tests.scala:152
-151:
-[7m152:    assertEquals(sendCommand(input), Right(finalPosition))[0m
-153:  }
-values are not the same
-[1m=&gt; Obtained[0m
-Right(
-  value = &quot;2 3 N&quot;
-)
-[1m=&gt; Diff[0m ([91m- obtained[0m, [92m+ expected[0m)
- Right(
-[91m-  value = &quot;2 3 N&quot;[0m
-[92m+  value = &quot;2 3 S&quot;[0m
- )
-	at munit.FunSuite.assertEquals(FunSuite.scala:11)
-	at UnitTests.$init$$$anonfun$20(Tests.scala:152)
-</failure>
+                      
+                    </testcase><testcase classname="UnitTests" name="should turn left from west" time="0.0">
+                      
                     </testcase>
           <system-out><![CDATA[]]></system-out>
           <system-err><![CDATA[]]></system-err>

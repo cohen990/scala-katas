@@ -1,8 +1,13 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: /home/git/scala-katas/src/main/scala/Main.scala:30:34 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m30 |[0m          Left([31m"invalid position"[0m)[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                  ^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                  Found:    Unit[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                  Required: Either[String, String][0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /home/sammiecohen/git/scala-katas/src/main/scala/Main.scala:35:10 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m35 |[0m          roverDirection = roverPositionRaw([31m4[0m) [33mmatch[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m          ^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m          Not found: roverDirection[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /home/sammiecohen/git/scala-katas/src/main/scala/Main.scala:41:115 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m41 |[0m          [33mcase[0m [31mtrue[0m => [33mval[0m roverPosition = RoverPosition(roverPositionRaw([31m0[0m).asDigit, roverPositionRaw([31m2[0m).asDigit, roverDirection)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                                                                                   ^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                               Not found: roverDirection[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

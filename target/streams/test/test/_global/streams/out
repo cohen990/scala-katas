@@ -1,9 +1,8 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(AcceptanceTests, CustomFingerprint{suite='munit.Suite'}, false, [SuiteSelector])[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(UnitTests, CustomFingerprint{suite='munit.Suite'}, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(AcceptanceTests, CustomFingerprint{suite='munit.Suite'}, false, [SuiteSelector])[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for munit not available.[0m
-[0m[[0m[31merror[0m] [0m[0mFailed: Total 2, Failed 1, Errors 0, Passed 1[0m
-[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UnitTests[0m
+[0m[[0m[31merror[0m] [0m[0mFailed: Total 20, Failed 5, Errors 0, Passed 15[0m
 [0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	UnitTests[0m
 [0m[[0m[31merror[0m] [0m[0m	AcceptanceTests[0m
 [0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

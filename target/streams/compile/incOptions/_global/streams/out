@@ -1,2 +1,71 @@
-[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/git/scala-katas/target/scala-3.2.2/classes.bak[0m
-[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/git/scala-katas/target/scala-3.2.2/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/sammiecohen/git/scala-katas/target/scala-3.2.2/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$$anon$1.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$$anon$1.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$$anon$1.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Commands$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverPosition$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CommandError.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverController.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RoverDirection$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/sammiecohen/git/scala-katas/target/scala-3.2.2/classes.bak[0m
