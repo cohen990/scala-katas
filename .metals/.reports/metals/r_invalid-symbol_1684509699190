@@ -1,0 +1,3 @@
+Symbol: _empty_/UnitTests#`<local UnitTests>`.finalPosition.
+Error message: _empty_/UnitTests#`<local UnitTests>`.finalPosition.
+Error: scala.meta.internal.mtags.IndexingExceptions$InvalidSymbolException: _empty_/UnitTests#`<local UnitTests>`.finalPosition.

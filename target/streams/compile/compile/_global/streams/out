@@ -1,0 +1,8 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: /home/git/scala-katas/src/main/scala/Main.scala:30:34 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m30 |[0m          Left([31m"invalid position"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                  ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                  Found:    Unit[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                  Required: Either[String, String][0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
