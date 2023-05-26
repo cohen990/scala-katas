@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E171] Type Error: /home/sammiecohen/git/scala-katas/src/test/scala/Tests.scala:49:16 [0m[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m49 |[0m    assertEquals(sendCommand(input), Left(error))[0m
-[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0mmissing argument for parameter ev of [33mmethod[0m [35massertEquals[0m in [33mtrait[0m [35mAssertions[0m: ([33mimplicit [0mloc: munit.Location, ev: Left[String, Nothing] <:< [0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m  Either[test.demo.CommandError, String][0m
-[0m[[0m[31merror[0m] [0m[0m[31m   |[0m): Unit[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
