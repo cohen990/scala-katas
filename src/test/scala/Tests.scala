@@ -20,10 +20,17 @@ class AcceptanceTests extends munit.FunSuite {
 }
 
 class UnitTests extends munit.FunSuite {
+
+  test("should be able to handle multiple commands for a single rover") {
+    val input = "5 5\n1 2 N\nLMLMLMLMM"
+    val finalPosition = "1 3 N"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+
   test("should fail when there is no input") {
     val input = ""
     val error = CommandError("no input detected")
-
 
     assertEquals(sendCommand(input), Left(error))
   }
@@ -49,41 +56,6 @@ class UnitTests extends munit.FunSuite {
     assertEquals(sendCommand(input), Left(error))
   }
 
-  test("should move north 1 2 N") {
-    val input = "5 5\n1 2 N\nM"
-    val finalPosition = "1 3 N"
-
-    assertEquals(sendCommand(input), Right(finalPosition))
-  }
-
-  test("should move south") {
-    val input = "5 5\n1 2 S\nM"
-    val finalPosition = "1 1 S"
-
-    assertEquals(sendCommand(input), Right(finalPosition))
-  }
-
-  test("should move east") {
-    val input = "5 5\n1 2 E\nM"
-    val finalPosition = "2 2 E"
-
-    assertEquals(sendCommand(input), Right(finalPosition))
-  }
-
-  test("should move west") {
-    val input = "5 5\n1 2 W\nM"
-    val finalPosition = "0 2 W"
-
-    assertEquals(sendCommand(input), Right(finalPosition))
-  }
-
-  test("should move north from 1 3 N") {
-    val input = "5 5\n1 3 N\nM"
-    val finalPosition = "1 4 N"
-
-    assertEquals(sendCommand(input), Right(finalPosition))
-  }
-
   test("should error if the x position is not numeric") {
     val input = "5 5\n1 V N\nM"
     val error = CommandError("invalid position")
@@ -97,13 +69,76 @@ class UnitTests extends munit.FunSuite {
     
     assertEquals(sendCommand(input), Left(error))
   }
-  
+
+
+
+  test("should move north from 1 2 N") {
+    val input = "5 5\n1 2 N\nM"
+    val finalPosition = "1 3 N"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+  test("should move north from 1 3 N") {
+    val input = "5 5\n1 3 N\nM"
+    val finalPosition = "1 4 N"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
   test("should move north from 2 3 N") {
     val input = "5 5\n2 3 N\nM"
     val finalPosition = "2 4 N"
 
     assertEquals(sendCommand(input), Right(finalPosition))
   }
+
+
+  test("should move east from 1 2 E") {
+    val input = "5 5\n1 2 E\nM"
+    val finalPosition = "2 2 E"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+  test("should move east from 1 3 E") {
+    val input = "5 5\n1 3 E\nM"
+    val finalPosition = "2 3 E"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+
+
+  test("should move south from 1 2 S") {
+    val input = "5 5\n1 2 S\nM"
+    val finalPosition = "1 1 S"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+  test("should move south from 1 3 S") {
+    val input = "5 5\n1 3 S\nM"
+    val finalPosition = "1 2 S"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+
+
+  test("should move west from 1 2 W") {
+    val input = "5 5\n1 2 W\nM"
+    val finalPosition = "0 2 W"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+  test("should move west from 1 3 W") {
+    val input = "5 5\n1 3 W\nM"
+    val finalPosition = "0 3 W"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+
+
+
+
+
+  
+
 
 
   test("should turn right from north") {
@@ -192,6 +227,33 @@ class UnitTests extends munit.FunSuite {
   test("should turn left from west") {
     val input = "5 5\n2 3 W\nL"
     val finalPosition = "2 3 S"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+  test("should turn left from north when starting at a different position") {
+    val input = "5 5\n1 3 N\nL"
+    val finalPosition = "1 3 W"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+
+  test("should turn left from east when starting at a different position") {
+    val input = "5 5\n1 3 E\nL"
+    val finalPosition = "1 3 N"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+
+  test("should turn left from south when starting at a different position") {
+    val input = "5 5\n1 3 S\nL"
+    val finalPosition = "1 3 E"
+
+    assertEquals(sendCommand(input), Right(finalPosition))
+  }
+
+  test("should turn left from west when starting at a different position") {
+    val input = "5 5\n1 3 W\nL"
+    val finalPosition = "1 3 S"
 
     assertEquals(sendCommand(input), Right(finalPosition))
   }

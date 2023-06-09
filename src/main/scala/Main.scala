@@ -13,14 +13,27 @@ enum RoverDirection:
   case West
 
 object RoverDirection:
-  def fromString(value: Char): RoverDirection =
+  def fromChar(value: Char): RoverDirection =
     value match
       case 'N' => RoverDirection.North
       case 'E' => RoverDirection.East
       case 'S' => RoverDirection.South
       case 'W' => RoverDirection.West
 
-case class RoverPosition(x: Integer, y: Integer, direction: RoverDirection)
+  def toChar(value: RoverDirection): Char =
+    value match
+      case RoverDirection.North => 'N'
+      case RoverDirection.East => 'E'
+      case RoverDirection.South => 'S'
+      case RoverDirection.West => 'W'
+
+case class Rover(x: Integer, y: Integer, direction: RoverDirection)
+
+object Rover:
+  def toString(rover: Rover): String =
+    s"${rover.x} ${rover.y} ${RoverDirection.toChar(rover.direction)}"
+
+
 
 enum RoverCommand:
   case Move
@@ -36,8 +49,8 @@ object RoverCommand:
 
 // solves https://github.com/makomweb/mars-rover
 object RoverController {
-  //def inputParser(inputString: String): Either[CommandError, (RoverPosition, Commands)] =
   def sendCommand(rawInput: String): Either[CommandError, String] = 
+
     if(rawInput.length == 0){
       Left(CommandError("no input detected"))
     } else {
@@ -46,37 +59,47 @@ object RoverController {
         case input if input.length == 1 => Left(CommandError("missing rover details"))
         case input if input.length == 2 => Left(CommandError("no commands detected"))
         case Array(gridSize, roverPositionRaw, commands) => 
-          val roverDirection = RoverDirection.fromString(roverPositionRaw(4))
-          roverPositionRaw(0).isDigit && roverPositionRaw(2).isDigit match
-          case true => val roverPosition = RoverPosition(roverPositionRaw(0).asDigit, roverPositionRaw(2).asDigit, roverDirection)
-            RoverCommand.fromChar(commands(0)) match
-            case RoverCommand.Move => roverPosition.direction match
-              case RoverDirection.North => moveRoverNorth(roverPosition)
-              case RoverDirection.South => Right("1 1 S")
-              case RoverDirection.East => Right("2 2 E")
-              case RoverDirection.West => Right("0 2 W")
-            case RoverCommand.Right => turnRoverRight(roverPosition)
-            case RoverCommand.Left => roverPosition.direction match
-              case RoverDirection.North => Right("2 3 W")
-              case RoverDirection.East => Right("2 3 N")
-              case RoverDirection.South => Right("2 3 E")
-              case RoverDirection.West => Right("2 3 S")
-          case false => Left(CommandError("invalid position"))
+          extractRover(roverPositionRaw) match
+            case Left(error) => Left(error)
+            case Right(rover) =>
+              var movableRover = rover
+              for(command <- commands) {
+                movableRover = executeCommand(movableRover, RoverCommand.fromChar(command))
+              }
+              Right(Rover.toString(movableRover))
     }
 
-  def moveRoverNorth(roverPosition: RoverPosition): Either[CommandError, String] =
-      Right(s"${roverPosition.x} ${roverPosition.y + 1} N")
+  def executeCommand(rover: Rover, command: RoverCommand) : Rover =
+    command match
+      case RoverCommand.Move => moveRover(rover)
+      case RoverCommand.Right => turnRoverRight(rover)
+      case RoverCommand.Left => turnRoverLeft(rover)
 
-  def turnRoverRight(roverPosition: RoverPosition): Either[CommandError, String] =
-    val currentPositionX = roverPosition.x
-    val currentPositionY = roverPosition.y
-    roverPosition.direction match
-      case RoverDirection.North =>
-        Right(s"$currentPositionX $currentPositionY E")
-      case RoverDirection.East =>
-        Right(s"$currentPositionX $currentPositionY S")
-      case RoverDirection.South =>
-        Right(s"$currentPositionX $currentPositionY W")
-      case RoverDirection.West =>
-        Right(s"$currentPositionX $currentPositionY N")
+  def extractRover(roverPositionRaw: String): Either[CommandError, Rover] =
+    roverPositionRaw(0).isDigit && roverPositionRaw(2).isDigit match
+      case true => 
+        val direction = RoverDirection.fromChar(roverPositionRaw(4))
+        Right(Rover(roverPositionRaw(0).asDigit, roverPositionRaw(2).asDigit, direction))
+      case false => Left(CommandError("invalid position"))
+
+  def moveRover(rover: Rover): Rover =
+    rover.direction match
+      case RoverDirection.North => rover.copy(y = rover.y + 1)
+      case RoverDirection.South => rover.copy(y = rover.y - 1)
+      case RoverDirection.East => rover.copy(x = rover.x + 1)
+      case RoverDirection.West => rover.copy(x = rover.x - 1)
+
+  def turnRoverRight(rover: Rover): Rover =
+    rover.direction match
+      case RoverDirection.North => rover.copy(direction = RoverDirection.East)
+      case RoverDirection.East => rover.copy(direction = RoverDirection.South)
+      case RoverDirection.South => rover.copy(direction = RoverDirection.West)
+      case RoverDirection.West => rover.copy(direction = RoverDirection.North)
+
+  def turnRoverLeft(rover: Rover): Rover =
+    rover.direction match
+      case RoverDirection.North => rover.copy(direction = RoverDirection.West)
+      case RoverDirection.East => rover.copy(direction = RoverDirection.North)
+      case RoverDirection.South => rover.copy(direction = RoverDirection.East)
+      case RoverDirection.West => rover.copy(direction = RoverDirection.South)
 }
