@@ -54,33 +54,33 @@ object RoverController {
     if(rawInput.length == 0){
       Left(CommandError("no input detected"))
     } else {
-      val input = rawInput.split('\n').toList
 
-      input match
+      rawInput
+        .split('\n')
+        .toList match
 
-        case input if input.length == 1 => Left(CommandError("missing rover details"))
-        case input if input.length == 2 => Left(CommandError("no commands detected"))
-        case (gridSize: String) :: (roversAndCommands: List[String]) =>
-          extractRawRoversAndCommands(roversAndCommands)
-          .map { (rawRover, rawCommands) => 
-            val rover = extractRover(rawRover) 
-            rover match 
-              case Left(error) => Left(error)
-              case Right(rover) =>
+          case input if input.length == 1 => Left(CommandError("missing rover details"))
+          case input if input.length == 2 => Left(CommandError("no commands detected"))
+          case (gridSize: String) :: (roversAndCommands: List[String]) =>
+            extractRawRoversAndCommands(roversAndCommands)
+            .map { (rawRover, rawCommands) => 
+              val rover = extractRover(rawRover) 
+              rover match 
+                case Left(error) => Left(error)
+                case Right(rover) =>
 
-                val result = rawCommands.foldLeft(rover) { 
-                  (accumulator: Rover, command: Char) => executeCommand(accumulator, RoverCommand.fromChar(command))
-                }
-
-                Right(Rover.toString(result))
-    
-          }
-          .sequence
-          .map(
-            _.fold("") { 
-              (accumulator: String, item: String) => s"${accumulator}${item}\n" }.stripSuffix("\n")
-          )
-        case nil => Left(CommandError("missing gridSize"))
+                  executeCommands(
+                    rover, 
+                    rawCommands.map(RoverCommand.fromChar(_)).toList
+                  ).asRight[CommandError]
+      
+            }
+            .sequence
+            .map(
+              _.foldLeft("") { 
+                (accumulator: String, item: Rover) => s"${accumulator}${Rover.toString(item)}\n" }.stripSuffix("\n")
+            )
+          case nil => Left(CommandError("missing gridSize"))
 
     }
 
@@ -90,6 +90,13 @@ object RoverController {
     .toList // List[List[String]] with each sub-list containing up to two items (a string representing a rover and another with its commands)
     .filter( (pair: List[String]) => pair.length == 2) // Filter any pairs without two items
     .map(group => (group(0), group(1))) // Create Tuple
+
+
+  def executeCommands(rover: Rover, commands: List[RoverCommand]): Rover = 
+    commands
+      .foldLeft(rover) { 
+        (accumulator: Rover, command: RoverCommand) => executeCommand(accumulator, command)
+      }
 
   def executeCommand(rover: Rover, command: RoverCommand) : Rover =
     command match
