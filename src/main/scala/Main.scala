@@ -54,20 +54,42 @@ object RoverController {
     if(rawInput.length == 0){
       Left(CommandError("no input detected"))
     } else {
-      val input = rawInput.split('\n')
-      input match 
+      val input = rawInput.split('\n').toList
+
+      input match
+
         case input if input.length == 1 => Left(CommandError("missing rover details"))
         case input if input.length == 2 => Left(CommandError("no commands detected"))
-        case Array(gridSize, roverPositionRaw, commands) => 
-          extractRover(roverPositionRaw) match
-            case Left(error) => Left(error)
-            case Right(rover) =>
-              var movableRover = rover
-              for(command <- commands) {
-                movableRover = executeCommand(movableRover, RoverCommand.fromChar(command))
-              }
-              Right(Rover.toString(movableRover))
+        case (gridSize: String) :: (roversAndCommands: List[String]) =>
+          extractRawRoversAndCommands(roversAndCommands)
+          .map { (rawRover, rawCommands) => 
+            val rover = extractRover(rawRover) 
+            rover match 
+              case Left(error) => Left(error)
+              case Right(rover) =>
+
+                val result = rawCommands.foldLeft(rover) { 
+                  (accumulator: Rover, command: Char) => executeCommand(accumulator, RoverCommand.fromChar(command))
+                }
+
+                Right(Rover.toString(result))
+    
+          }
+          .sequence
+          .map(
+            _.fold("") { 
+              (accumulator: String, item: String) => s"${accumulator}${item}\n" }.stripSuffix("\n")
+          )
+        case nil => Left(CommandError("missing gridSize"))
+
     }
+
+  def extractRawRoversAndCommands(roversAndCommandsRaw: List[String]) : List[(String, String)] =
+    roversAndCommandsRaw
+    .grouped(2) 
+    .toList // List[List[String]] with each sub-list containing up to two items (a string representing a rover and another with its commands)
+    .filter( (pair: List[String]) => pair.length == 2) // Filter any pairs without two items
+    .map(group => (group(0), group(1))) // Create Tuple
 
   def executeCommand(rover: Rover, command: RoverCommand) : Rover =
     command match

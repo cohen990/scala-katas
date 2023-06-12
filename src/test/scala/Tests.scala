@@ -2,18 +2,14 @@ import test.demo.RoverController.sendCommand
 import test.demo.CommandError
 
 class AcceptanceTests extends munit.FunSuite {
-  test("example test that succeeds") {
-    val input = """
-|5 5
-|1 2 N
-|LMLMLMLMM
-|3 3 E
-|MMRMMRMRRM
-""".stripMargin
-    val output = """
-|1 3 N
-|5 1 E
-""".stripMargin
+  test("Rover Acceptance Test") {
+    val input = """5 5
+                  |1 2 N
+                  |LMLMLMLMM
+                  |3 3 E
+                  |MMRMMRMRRM""".stripMargin
+    val output = """1 3 N
+                   |5 1 E""".stripMargin
 
     assertEquals(sendCommand(input), Right(output))
   }
