@@ -67,11 +67,13 @@ object RoverController {
             rover match 
               case Left(error) => Left(error)
               case Right(rover) =>
-                var movableRover = rover
-                for(rawCommand <- rawCommands) {
-                  movableRover = executeCommand(movableRover, RoverCommand.fromChar(rawCommand))
+
+                val result = rawCommands.foldLeft(rover) { 
+                  (accumulator: Rover, command: Char) => executeCommand(accumulator, RoverCommand.fromChar(command))
                 }
-                Right(Rover.toString(movableRover))
+
+                Right(Rover.toString(result))
+    
           }
           .sequence
           .map(
